@@ -23,7 +23,7 @@
 #' @param table_variables A list of factors as categorical variables.
 #' @param table_class A factor representing the class of the case.
 #' @return Total correlation estimation for the variable set
-#'     {\code{table.variables}, \code{table.class}}.
+#'     \{\code{table_variables}, \code{table_class}\}.
 #' @name total_correlation
 NULL
 

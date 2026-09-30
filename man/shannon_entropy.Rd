@@ -20,7 +20,7 @@ Shannon entropy estimation of the categorical variable.
 The Shannon entropy estimates the average minimum number of bits
 needed to encode a string of symbols, based on the frequency of the
 symbols (see
-\url{http://www.bearcave.com/misl/misl_tech/wavelets/compression/shannon.html}).
+\url{http://bearcave.com/misl/misl_tech/wavelets/compression/shannon.html}).
 }
 \examples{
 shannon_entropy(factor(c(1,0)))

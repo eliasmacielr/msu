@@ -17,7 +17,7 @@ C(table_variables, table_class)
 }
 \value{
 Total correlation estimation for the variable set
-    {\code{table.variables}, \code{table.class}}.
+    \{\code{table_variables}, \code{table_class}\}.
 }
 \description{
 Total Correlation is a generalization of information gain

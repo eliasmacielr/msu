@@ -31,7 +31,7 @@ NULL
 #' The Shannon entropy estimates the average minimum number of bits
 #' needed to encode a string of symbols, based on the frequency of the
 #' symbols (see
-#' \url{http://www.bearcave.com/misl/misl_tech/wavelets/compression/shannon.html}).
+#' \url{http://bearcave.com/misl/misl_tech/wavelets/compression/shannon.html}).
 #' @rdname shannon_entropy
 #' @examples
 #' shannon_entropy(factor(c(1,0)))
@@ -103,7 +103,7 @@ joint_H <- joint_shannon_entropy
 #' @param table_variables A list of factors as categorical variables.
 #' @param table_class A factor representing the class of the case.
 #' @return Joint Shannon entropy estimation for the variable set
-#'     {\code{table.variables}, \code{table.class}}.
+#'     \{\code{table_variables}, \code{table_class}\}.
 #' @name multivar_joint_shannon_entropy
 NULL
 

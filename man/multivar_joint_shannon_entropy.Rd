@@ -17,7 +17,7 @@ multivar_joint_H(table_variables, table_class)
 }
 \value{
 Joint Shannon entropy estimation for the variable set
-    {\code{table.variables}, \code{table.class}}.
+    \{\code{table_variables}, \code{table_class}\}.
 }
 \description{
 The multivariate joint Shannon entropy provides an estimation of
