@@ -1,6 +1,6 @@
 Package: msu
 Title: Multivariate Symmetric Uncertainty and Other Measurements
-Version: 0.0.2
+Version: 0.1.0
 Authors@R: c(person("Gustavo", "Sosa", email = "gsosa.py@gmail.com",
     role = "aut"), person("Elias", "Maciel", email =
     "eliasmacielr@gmail.com", role = "cre"))
