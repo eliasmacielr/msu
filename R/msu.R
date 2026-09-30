@@ -55,17 +55,9 @@
 msu <- function(table_variables, table_class) {
   n <- length(table_variables) + 1
 
-  independent_entropy <- msu::H(table_class)
-  for (i in 1:length(table_variables)) {
-    independent_entropy <- independent_entropy + msu::H(table_variables[[i]])
-  }
-
-  dependent_entropy <- msu::multivar_joint_H(table_variables, table_class)
-  if (round(independent_entropy) < round(dependent_entropy)) {
-    stop('ERROR: total correlation value is incorrect.')
-  }
-
-  total_correlation <- independent_entropy - dependent_entropy
+  independent_entropy <- msu::H(table_class) +
+    sum(vapply(table_variables, msu::H, numeric(1)))
+  total_correlation <- msu::C(table_variables, table_class)
 
   msu <- n / (n - 1) * (total_correlation / independent_entropy)
   msu <- ifelse(is.nan(msu), 0, round(msu, digits = 7)) # if C/H(X_i) = 0/0
@@ -111,7 +103,10 @@ symmetrical_uncertainty <- function(x, y) {
     stop("one or both values passed are not of type factor")
   }
 
-  su <- 2 * (msu::IG(x,y) / (msu::H(x) + msu::H(y)))
+  h_x <- msu::H(x)
+  h_y <- msu::H(y)
+  ig <- h_x + h_y - msu::joint_H(x, y) # unrounded IG, SU is rounded below
+  su <- 2 * (ig / (h_x + h_y))
   su <- ifelse(is.nan(su), 0, round(su, digits = 7))
   if (!(su >= 0 && su <= 1)) {
     stop("ERROR: estimated SU out of range [0,1]. SU = ", su)

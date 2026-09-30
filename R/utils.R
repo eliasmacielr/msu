@@ -216,3 +216,12 @@ new_xor_variables <- function(n_variables = 2,
   return (variable_group)
 }
 # ------------------------------------------------------------------------------
+
+
+# nats_to_bits -----------------------------------------------------------------
+# Exact conversion from nats to bits; infotheo::natstobits multiplies by
+# a truncated constant (1.442695), which introduces an error of ~1e-8.
+nats_to_bits <- function(x) {
+  return (x / log(2))
+}
+# ------------------------------------------------------------------------------

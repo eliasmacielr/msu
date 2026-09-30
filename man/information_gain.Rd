@@ -17,7 +17,8 @@ IG(x, y)
 }
 \value{
 Information gain estimation based on Sannon entropy for
-    variables \code{x} and \code{y}.
+    variables \code{x} and \code{y}. The result is \code{round}ed to
+    7 decimal places.
 }
 \description{
 Information gain (also called mutual information) is a measure of

@@ -23,7 +23,8 @@
 #' @param x A factor representing a categorical variable.
 #' @param y A factor representing a categorical variable.
 #' @return Information gain estimation based on Sannon entropy for
-#'     variables \code{x} and \code{y}.
+#'     variables \code{x} and \code{y}. The result is \code{round}ed to
+#'     7 decimal places.
 #' @name information_gain
 NULL
 
@@ -48,11 +49,9 @@ information_gain <- function(x, y) {
     stop("one or both values passed are not of type factor")
   }
 
-  h_row <- entropy::entropy.plugin(rowSums(table(x, y)), unit = "log2")
-  h_col <- entropy::entropy.plugin(colSums(table(x, y)), unit = "log2")
-  h_tab <- entropy::entropy.plugin(table(x, y), unit = "log2")
+  ig <- nats_to_bits(infotheo::mutinformation(x, y))
 
-  return (h_row + h_col - h_tab)
+  return (round(ig, digits = 7)) # remove floating point residue
 }
 # ------------------------------------------------------------------------------
 

@@ -46,7 +46,7 @@ shannon_entropy <- function(x) {
     stop("value passed is not of type factor")
   }
 
-  return (entropy::entropy.plugin(table(x), unit = "log2"))
+  return (nats_to_bits(infotheo::entropy(x)))
 }
 # ------------------------------------------------------------------------------
 
@@ -88,7 +88,7 @@ joint_shannon_entropy <- function(x, y) {
     stop("one or both values passed are not of type factor")
   }
 
-  return (entropy::entropy.plugin(table(x, y), unit = "log2"))
+  return (nats_to_bits(infotheo::entropy(data.frame(x, y))))
 }
 # ------------------------------------------------------------------------------
 
@@ -124,9 +124,8 @@ NULL
 #'     \code{\link{joint_shannon_entropy}} for the entropy
 #'     associated with two random variables.
 multivar_joint_shannon_entropy <- function(table_variables, table_class) {
-  return (entropy::entropy.plugin(table(data.frame(table_variables,
-                                                   table_class)),
-                                  unit = 'log2'))
+  return (nats_to_bits(
+    infotheo::entropy(data.frame(table_variables, table_class))))
 }
 # ------------------------------------------------------------------------------
 
