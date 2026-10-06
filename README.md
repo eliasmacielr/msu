@@ -20,7 +20,7 @@ install.packages("msu")
 ```
 
 The development version is available in GitHub and it
-can be installed using [devtools](https://github.com/hadley/devtools)
+can be installed using [devtools](https://github.com/r-lib/devtools)
 ```
 devtools::install_github("eliasmacielr/msu")
 ```
